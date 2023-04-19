@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tesseract.js Offline</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.jsdelivr.net/npm/openai@3.2.1/dist/index.min.js"></script>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+</head>
+<body>
+  
+  <main>
+    <div class="button-container">
+      <h1>多功能翻譯網站</h1>
+      <input type="file" id="fileInput">
+      <button id="startBtn">偵測</button>
+      <button id="copy-btn">複製偵測</button>
+      <button id="copy2-btn">複製翻譯</button>
+      <button id="download-btn">Download</button>
+      <select id="source-lang-select">
+        <option value="auto">自動偵測</option>
+        <option value="en">英文</option>
+        <option value="zh-TW">中文</option>
+        <option value="ja">日文</option>
+        <option value="ko">韓文</option>
+        
+      </select>
+      <select id="target-lang-select">
+        <option value="en">英文</option>
+        <option value="zh-TW" selected>中文</option>
+        <option value="ja">日文</option>
+        <option value="ko">韓文</option>
+        
+      </select>
+      <button id="translate-btn">翻译</button>
+      <!-- <button id="chatgpt">AI</button> -->
+      <!-- <button id="sidebar-toggle">導覽</button> -->
+      <i class="fas fa-bars"  id="sidebar-toggle"></i>
+      <!-- <i class="fas fa-bars" id="sidebar-toggle"></i> -->
+      <i class="fa-regular fa-comment fa-fade" id="chatgpt"></i>
+      
+      <aside class="sidebar" id="sidebar">
+          <!-- 側邊欄的內容 -->
+        <i class="fa-solid fa-xmark" id="close-btn" style="color: #f31212;"></i>
+        <!-- <button id="close-btn">返回</button> -->
+          
+        <ul class="qa-list">
+          <li class="qa-item">
+            <div class="qa-question">这里是问题</div>
+            <div class="qa-answer">这里是答案</div>
+          </li>
+          <li class="qa-item">
+            <div class="qa-question">这里是另一个问题</div>
+            <div class="qa-answer">这里是另一个答案，其中包含一张图片：<br><img src="https://picsum.photos/200/200" alt="图片" style="width: 200px; height: 200px;"></div>
+          </li>
+          <li class="qa-item">
+            <div class="qa-question">这里是第三个问题</div>
+            <div class="qa-answer">这里是第三个答案</div>
+          </li>
+        </ul>
+
+      </aside>
+      <aside id="chat-window">
+        <button id="close-btn2">返回</button>
+        <div class="chat-container">
+          <div class="chat-message">
+            <p>歡迎使用ChatGPT！</p>
+          </div>
+        </div>
+        <form id="chat-form">
+          <input type="text" id="chat-input" placeholder="输入您的消息...">
+          <button type="submit" id="send-btn">发送</button>
+        </form>
+      </aside>
+    
+      
+      
+      
+      </nav>
+    </div>
+    <div class="container">
+      <img id="image" />
+      <div class="text-left-box">
+        <h2>偵測結果</h2>
+        <div id="resultleft"></div>
+      </div>
+      <div class="text-right-box">
+        <h2>翻譯結果</h2>
+        <div id="resultright"></div>
+      </div>
+    </div>
+  </main>
+  
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="node_modules\tesseract.js\dist\tesseract.min.js"></script>
+  <script src="./main.js"></script>
+
+    
+</body>
+</html>
