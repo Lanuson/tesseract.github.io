@@ -121,7 +121,7 @@ startBtn.addEventListener('click', async () => {
 
 
 
-  const apiKey = process.env.apiKey;
+  // const apiKey = process.env.apiKey;
   const apiUrl = `https://translation.googleapis.com/language/translate/v2?key=${apiKey}`;
   
   const sourceLangSelect = document.querySelector('#source-lang-select');
@@ -197,7 +197,7 @@ startBtn.addEventListener('click', async () => {
   const chatContainer = document.querySelector('.chat-container');
   
    
-  const API_KEY = process.env.API_KEY;
+  // const API_KEY = process.env.API_KEY;
 
   
   chatBtn.addEventListener('click', () => {
